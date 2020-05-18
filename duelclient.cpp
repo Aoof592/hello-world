@@ -359,11 +359,11 @@ void DuelClient::HandleSTOCPacketLan(char* data, unsigned int len) {
 		}
 		case ERRMSG_DECKERROR: {
 			mainGame->gMutex.lock();
-			int mainmin = 40, mainmax = 60, extramax = 15, sidemax = 15;
+			int mainmin = 40, mainmax = 100, extramax = 15, sidemax = 15;
 			if (mainGame->cbDeckSelect2->isVisible()) {
 				if (mainGame->extra_rules & DECK_LIMIT_20) {
 					mainmin = 40;
-					mainmax = 60;
+					mainmax = 100;
 					extramax = 10;
 					sidemax = 12;
 				} else {
